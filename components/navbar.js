@@ -1,7 +1,6 @@
 import Logo from "./logo";
 import { usePathname } from "next/navigation";
 import {
-    Link,
     Container,
     Box,
     Stack,
@@ -16,8 +15,10 @@ import {
     useColorModeValue,
     IconButton,
 } from "@chakra-ui/react";
-import NextLink from "next/link";
+import { Link } from "@chakra-ui/next-js";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import { mode } from "@chakra-ui/theme-tools";
+import ThemeToggleButton from "./theme-toggle-button";
 
 const LinkItem = ({ href, children, ...props }) => {
     const path = usePathname();
@@ -25,7 +26,6 @@ const LinkItem = ({ href, children, ...props }) => {
     const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
     return (
         <Link
-            as={NextLink}
             p={2}
             bg={active ? "glassTeal" : undefined}
             color={active ? "#202023" : inactiveColor}
@@ -46,7 +46,7 @@ const NavBar = () => {
             position={"fixed"}
             as="nav"
             w={"100%"}
-            bg={useColorModeValue("#ffffff40", "#20202380")}
+            bg={useColorModeValue("#ffffff", "#202023")}
             style={{ backdropFilter: "blur(10px)" }}
             zIndex={1}
         >
@@ -59,12 +59,7 @@ const NavBar = () => {
                 justifyContent={"space-between"}
             >
                 <Flex align={"center"} mr={5}>
-                    <Heading
-                        as={"h1"}
-                        size={"md"}
-                        letterSpacing={"tight"}
-                        variant={"section-title"}
-                    >
+                    <Heading as={"h1"} size={"md"} letterSpacing={"tight"}>
                         <Logo />
                     </Heading>
                 </Flex>
@@ -80,26 +75,20 @@ const NavBar = () => {
                     <LinkItem href="/resume">Resume</LinkItem>
                 </Stack>
                 <Box display={{ base: "inline-block", md: "none" }}>
+                    <ThemeToggleButton />
                     <Menu isLazy>
                         <MenuButton
                             as={IconButton}
                             icon={<HamburgerIcon />}
                             variant={"outline"}
                             aria-label="Options"
+                            ml={2}
                         />
                         <MenuList>
-                            <MenuItem
-                                as={LinkItem}
-                                href="/works"
-                                _hover={{ bg: "gray.600" }}
-                            >
+                            <MenuItem as={LinkItem} href="/works">
                                 Works
                             </MenuItem>
-                            <MenuItem
-                                as={LinkItem}
-                                href="/resume"
-                                _hover={{ bg: "gray.600" }}
-                            >
+                            <MenuItem as={LinkItem} href="/resume">
                                 Resume
                             </MenuItem>
                         </MenuList>
