@@ -1,7 +1,6 @@
 import Providers from "./providers";
 
 export const metadata = {
-    title: "Tran Thien Khanh",
     icons: {
         icon: "/favicon.ico",
     },

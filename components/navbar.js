@@ -28,7 +28,6 @@ const LinkItem = ({ href, children, ...props }) => {
         <Link
             p={2}
             bg={active ? "glassTeal" : undefined}
-            color={active ? "#202023" : inactiveColor}
             href={href}
             scroll={false}
             w={{ base: "full", md: "auto" }}
@@ -59,7 +58,7 @@ const NavBar = () => {
                 justifyContent={"space-between"}
             >
                 <Flex align={"center"} mr={5}>
-                    <Heading as={"h1"} size={"md"} letterSpacing={"tight"}>
+                    <Heading as={"h1"} size={"md"}>
                         <Logo />
                     </Heading>
                 </Flex>
@@ -74,25 +73,27 @@ const NavBar = () => {
                     <LinkItem href="/works">Works</LinkItem>
                     <LinkItem href="/resume">Resume</LinkItem>
                 </Stack>
-                <Box display={{ base: "inline-block", md: "none" }}>
+                <Box>
                     <ThemeToggleButton />
-                    <Menu isLazy>
-                        <MenuButton
-                            as={IconButton}
-                            icon={<HamburgerIcon />}
-                            variant={"outline"}
-                            aria-label="Options"
-                            ml={2}
-                        />
-                        <MenuList>
-                            <MenuItem as={LinkItem} href="/works">
-                                Works
-                            </MenuItem>
-                            <MenuItem as={LinkItem} href="/resume">
-                                Resume
-                            </MenuItem>
-                        </MenuList>
-                    </Menu>
+                    <Box display={{ base: "inline-block", md: "none" }}>
+                        <Menu isLazy>
+                            <MenuButton
+                                as={IconButton}
+                                icon={<HamburgerIcon />}
+                                variant={"outline"}
+                                aria-label="Options"
+                                ml={2}
+                            />
+                            <MenuList>
+                                <MenuItem as={LinkItem} href="/works">
+                                    Works
+                                </MenuItem>
+                                <MenuItem as={LinkItem} href="/resume">
+                                    Resume
+                                </MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </Box>
                 </Box>
             </Container>
         </Box>
