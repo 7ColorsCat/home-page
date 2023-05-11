@@ -25,12 +25,12 @@ const LinkItem = ({ href, children, ...props }) => {
     const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
     return (
         <Link
-            p={2}
             bg={active ? "glassTeal" : undefined}
             href={href}
             scroll={false}
             w={{ base: "full", md: "auto" }}
             display={{ base: "block", md: "inline-block" }}
+            color={active ? "#202023" : inactiveColor}
             {...props}
         >
             {children}
@@ -84,11 +84,11 @@ const NavBar = () => {
                                 ml={2}
                             />
                             <MenuList>
-                                <MenuItem as={LinkItem} href="/works">
-                                    Works
+                                <MenuItem>
+                                    <LinkItem href="/works">Works</LinkItem>
                                 </MenuItem>
-                                <MenuItem as={LinkItem} href="/resume">
-                                    Resume
+                                <MenuItem>
+                                    <LinkItem href="/resume">Resume</LinkItem>
                                 </MenuItem>
                             </MenuList>
                         </Menu>
