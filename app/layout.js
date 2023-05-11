@@ -1,11 +1,5 @@
 import Providers from "./providers";
 
-export const metadata = {
-    icons: {
-        icon: "/favicon.ico",
-    },
-};
-
 export default function RootLayout({ children }) {
     return (
         <html lang="en">

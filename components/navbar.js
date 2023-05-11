@@ -17,7 +17,6 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { mode } from "@chakra-ui/theme-tools";
 import ThemeToggleButton from "./theme-toggle-button";
 
 const LinkItem = ({ href, children, ...props }) => {
@@ -45,7 +44,7 @@ const NavBar = () => {
             position={"fixed"}
             as="nav"
             w={"100%"}
-            bg={useColorModeValue("#ffffff", "#202023")}
+            bg={useColorModeValue("#ffffff40", "#20202380")}
             style={{ backdropFilter: "blur(10px)" }}
             zIndex={1}
         >
