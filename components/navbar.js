@@ -25,7 +25,8 @@ const LinkItem = ({ href, children, ...props }) => {
     const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
     return (
         <Link
-            bg={active ? "glassTeal" : undefined}
+            p={2}
+            bg={active ? "grassTeal" : undefined}
             href={href}
             scroll={false}
             w={{ base: "full", md: "auto" }}
