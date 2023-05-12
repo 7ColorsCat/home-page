@@ -60,9 +60,7 @@ export default function ChakraPage() {
                                 src={"/images/avatar.png"}
                                 rounded={"full"}
                                 transform={"scaleX(-1)"}
-                                bgGradient={
-                                    "linear(to-t,   #12c2e9, #c471ed, #f64f59)"
-                                }
+                                bgGradient={"linear(to-t, #4568dc, #b06ab3)"}
                                 width="100"
                                 height="100"
                                 objectFit={"cover"}

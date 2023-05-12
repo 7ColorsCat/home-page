@@ -3,7 +3,6 @@
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { M_PLUS_Rounded_1c } from "next/font/google";
-import { mode } from "@chakra-ui/theme-tools";
 
 const nextFont = M_PLUS_Rounded_1c({
     weight: ["400"],

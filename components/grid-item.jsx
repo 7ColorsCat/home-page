@@ -1,29 +1,50 @@
 import { Link } from "@chakra-ui/next-js";
 import { Box, LinkBox, LinkOverlay, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import { Global } from "@emotion/react";
 
 export const GridItem = ({ children, href, title, thumbnail }) => (
-    <Box w={"full"} aligh="center">
+    <Box w={"full"} textAlign="center">
         <LinkBox cursor={"pointer"}>
             <Image
                 src={thumbnail}
                 alt={title}
                 className="grid-item-thumnail"
                 loading="lazy"
-                placeholder="blur"
             />
             <LinkOverlay href={href} target="_blank">
                 <Text mt={2}>{title}</Text>
             </LinkOverlay>
-            <Text fontSize={14}></Text>
+            <Text fontSize={14}>{children}</Text>
         </LinkBox>
     </Box>
 );
 
-export const WordGridItem = ({ children, id, title }) => (
-    <Box w={"full"} align="center">
-        <Link href={"/works/${id}"}>
-            <LinkBox></LinkBox>
-        </Link>
+export const WorkGridItem = ({ children, id, title, thumbnail }) => (
+    <Box w={"full"} textAlign="center">
+        <LinkBox cursor={"pointer"} as={Link} href={`/works/${id}`}>
+            <Image
+                src={thumbnail}
+                alt={title}
+                className="grid-item-thumnail"
+                placeholder="blur"
+                loading="lazy"
+            />
+            <LinkOverlay as="div" href={`/works/${id}`} target="_blank">
+                <Text mt={2} fontSize={20}>
+                    {title}
+                </Text>
+            </LinkOverlay>
+            <Text fontSize={14}>{children}</Text>
+        </LinkBox>
     </Box>
+);
+
+export const GridItemStyle = () => (
+    <Global
+        styles={`
+        .grid-item-thumnail {
+                border-radius: 12px
+        }`}
+    />
 );
