@@ -13,12 +13,7 @@ const variants = {
 
 export default function Template({ children }) {
     return (
-        <Box
-            as={"main"}
-            pb={8}
-            h={"calc(100vh)"}
-            bg={useColorModeValue("#f0e7db", "#202023")}
-        >
+        <Box as={"main"} pb={8} bg={useColorModeValue("#f0e7db", "#202023")}>
             <NavBar />
             <AnimatePresence mode="wait">
                 <motion.div

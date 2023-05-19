@@ -36,6 +36,7 @@ const fonts = {
 
 const colors = {
     grassTeal: "#88ccca",
+    lavender: "#751264",
 };
 
 const config = {

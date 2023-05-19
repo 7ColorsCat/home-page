@@ -10,10 +10,11 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 import Image from "next/image";
-import Section from "../components/section";
-import Paragraph from "../components/paragraph";
+import Section from "@/components/section";
+import Paragraph from "@/components/paragraph";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { BioSection, BioYear } from "@/components/bio";
+import CatModel from "@/components/cat-model";
 
 const ProfileImage = chakra(Image, {
     shouldForwardProp: (prop) =>
@@ -23,7 +24,10 @@ const ProfileImage = chakra(Image, {
 export default function ChakraPage() {
     return (
         <>
-            <Container py={8}>
+            <Container>
+                <Box>
+                    <CatModel />
+                </Box>
                 <Box
                     bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
                     borderRadius={"lg"}
@@ -47,7 +51,7 @@ export default function ChakraPage() {
                         align="center"
                     >
                         <Box
-                            borderColor="whiteAlpha.800"
+                            borderColor="lavender"
                             borderWidth={2}
                             borderStyle="solid"
                             w="100px"
