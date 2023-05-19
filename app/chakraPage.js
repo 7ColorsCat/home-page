@@ -34,6 +34,7 @@ export default function ChakraPage() {
                     mb={6}
                     p={3}
                     textAlign={"center"}
+                    mt={-20}
                 >
                     Hello, I&apos;m web developer in Viet Nam!
                 </Box>

@@ -23,7 +23,7 @@ export default function Template({ children }) {
                     exit="exit"
                     transition={{ duration: 0.4, type: "eseInOut" }}
                 >
-                    <Container maxW={"container.sm"} pt={14}>
+                    <Container maxW={"container.sm"} pt={20}>
                         {children}
                     </Container>
                 </motion.div>
